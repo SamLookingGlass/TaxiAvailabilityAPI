@@ -1,3 +1,6 @@
+let cors_api_host = 'cors-anywhere.herokuapp.com';
+let cors_api_url = 'https://' + cors_api_host + '/'
+
 let singapore = [1.29, 103.85]
 let map = L.map('map').setView(singapore, 13);
 
@@ -65,6 +68,8 @@ async function getTaxi() {
   })
   }
   markerClusterLayer.addTo(map)
+  // Refresh API every 10 seconds
+  setTimeout(() =>  getTaxi(), 10000)
   }
     
 getTaxi()
